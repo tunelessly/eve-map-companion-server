@@ -12,15 +12,10 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-import org.slf4j.LoggerFactory;
-import org.slf4j.Logger;
-
 @Configuration
 @Profile("prod")
 @EnableWebSecurity
 public class SecurityConfiguration {
-
-    private static final Logger logger = LoggerFactory.getLogger(SecurityConfiguration.class);
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

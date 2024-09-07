@@ -32,6 +32,7 @@ dependencies {
 	implementation 'org.springframework.session:spring-session-jdbc'
 	implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.46.1.0'
 	implementation group: 'org.hibernate.orm', name: 'hibernate-community-dialects', version: '6.6.0.Final'
+	implementation group: 'net.troja.eve', name: 'eve-esi', version: '4.1.0'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'

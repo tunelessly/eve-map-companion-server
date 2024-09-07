@@ -17,7 +17,7 @@ public class SecurityConfigurationDev {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        logger.warn("Dev security loaded");
+        logger.warn("Web security disabled for this profile!");
         return http.build();
     }
 }
