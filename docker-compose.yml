@@ -1,0 +1,14 @@
+# Intended to produce build artifacts for the SVGs and web app.
+version: '3'
+
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./build_docker/downloads:/renderer/downloads
+      - ./build_docker/frontend_output:/final
+    environment:
+      - UID=$UID
+      - GID=$GID
