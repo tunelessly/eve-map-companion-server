@@ -22,12 +22,12 @@ ENV UID=${UID}
 ENV GID=${GID}
 ENTRYPOINT [ "sh", "-c", \
     "echo UID:GID $UID:$GID; \ 
-     git clone --depth 1 https://github.com/tunelessly/EVESVGRenderer.git /temp; mv /temp/* ${rendererWorkDir}; \
-     git clone --depth 1 https://github.com/tunelessly/eve-map-companion.git ${frontendWorkDir}; \
-     cd ${rendererWorkDir}; chmod +x run.sh; poetry install; ./run.sh; \
-     cd ${frontendWorkDir}; yarn install --non-interactive; yarn build; \
-     cd /; \
-     cp -r ${rendererWorkDir}/output/*.svg final/; \
-     cp -r ${frontendWorkDir}/dist/* final/; \
+     git clone --depth 1 https://github.com/tunelessly/EVESVGRenderer.git /temp && mv /temp/* ${rendererWorkDir} && \
+     git clone --depth 1 https://github.com/tunelessly/eve-map-companion.git ${frontendWorkDir} && \
+     cd ${rendererWorkDir} && chmod +x run.sh && poetry install && ./run.sh && \
+     cd ${frontendWorkDir} && yarn install --non-interactive && yarn build && \
+     cd / && \
+     cp -r ${rendererWorkDir}/output/*.svg final/ && \
+     cp -r ${frontendWorkDir}/dist/* final/ && \
      chown -R $UID:$GID final/; \
 " ]
